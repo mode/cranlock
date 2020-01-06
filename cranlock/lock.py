@@ -191,6 +191,7 @@ def main(input_file, version_file, output_file):
         if package in versions:
             output_file.write("devtools::install_version('{package}', version='{version}')\n".format(
                 package=package, version=versions[package]))
+            del versions[package]
 
 
 if __name__ == "__main__":
